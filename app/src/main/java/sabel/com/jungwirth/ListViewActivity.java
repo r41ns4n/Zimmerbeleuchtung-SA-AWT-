@@ -60,10 +60,15 @@ public class ListViewActivity extends AppCompatActivity {
         try {
             String cameraId = cameraManager.getCameraIdList()[0];
             cameraManager.setTorchMode(cameraId, true);
-            Timer timer = new Timer();
+            //Timer timer = new Timer();
+            Thread.sleep(5000);
+            cameraManager.setTorchMode(cameraId, false);
 
         } catch (CameraAccessException e) {
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
+
 
     }
 
